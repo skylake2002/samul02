@@ -3,26 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우주 셸터 소개</title>
+    <title>우주 쉘터 프로젝트</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #1c1c2b;
-            color: #ffffff;
+        /* 전체 슬라이드 영역 크기 설정 */
+        .swiper-container {
+            width: 100%;
+            height: 100vh; /* 화면 전체 크기 */
+            background: linear-gradient(to bottom, #000000, #434343); /* 검은색 그라데이션 배경 */
         }
-        h1 {
+
+        /* 각 슬라이드의 스타일 */
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.2); /* 약간의 투명도 추가 */
+            font-size: 2rem;
+            color: #fff; /* 글자색 흰색 */
             text-align: center;
-            color: #f0a500;
-        }
-        img {
-            display: block;
-            margin: 20px auto;
-            max-width: 100%;
         }
     </style>
 </head>
 <body>
-    <h1>우주 셸터 소개</h1>
-    <p>우주 셸터는 극한 환경에서 인류의 생존을 가능하게 하는 기술로 설계되었습니다. 이 셸터
+
+    <!-- Swiper 컨테이너 시작 -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- 각 슬라이드 -->
+            <div class="swiper-slide">
+                <h2>우주 쉘터 프로젝트 소개</h2>
+                <p>우주에서 생존을 위한 쉘터 설계에 관한 내용입니다.</p>
+            </div>
+            <div class="swiper-slide">
+                <h2>슬라이드 2</h2>
+                <p>여기서는 쉘터 설계에 필요한 기술을 설명합니다.</p>
+            </div>
+            <div class="swiper-slide">
+                <h2>슬라이드 3</h2>
+                <p>이 슬라이드에서는 안전 문제와 해결 방법을 다룹니다.</p>
+            </div>
+        </div>
+
+        <!-- 네비게이션 버튼 (좌, 우) -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- 페이지 네비게이션 (점) -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Swiper 초기화
+        const swiper = new Swiper('.swiper-container', {
+            loop: false, // loop 설정을 false로 변경 (첫 페이지와 마지막 페이지가 연결되지 않음)
+            slidesPerView: 1, // 한 번에 한 페이지만 보기
+            spaceBetween: 0, // 슬라이드 간격
+            pagination: {
+                el: '.swiper-pagination', // 페이지네이션
+                clickable: true, // 클릭 가능하게 설정
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', // 다음 버튼
+                prevEl: '.swiper-button-prev', // 이전 버튼
+            },
+            effect: 'slide', // 스와이프 효과
+        });
+    </script>
+
+</body>
+</html>
